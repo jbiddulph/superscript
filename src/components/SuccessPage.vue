@@ -1,9 +1,27 @@
 <template>
   <div class="bg-gray-100">
-    <div class="top-shadow bg-white">
-      <h2>here we are</h2>
+     <div class="top-shadow bg-white">
+      &nbsp;
     </div>
-    <h2>here we are</h2>
+    <div class="form-inline rounded-xl bg-green-200 container mt-12 mb-12 p-4 w-600">
+      <div class="flex justify-between align-items-center">
+        <div class="flex-row align-items-center">
+          <div class="flex flex-row align-items-center">
+            <img src="@/assets/tick.png" width="33" height="33" />
+            <h3 class="mt-2 ml-8">Success!</h3>
+          </div>
+          <span class="ml-16">Reference number: #5b7a8643256d5</span>
+        </div>
+        <img src="@/assets/cross.png" height="20" />
+      </div>
+    </div>
+    <div class="form-inline rounded-xl bg-white container mt-12 mb-12 p-4 w-600">
+      <div class="pb-20">
+        <h2>here we go</h2>
+      </div>
+    </div>
+    <div class="h-8">
+    </div>
   </div>
 </template>
 
