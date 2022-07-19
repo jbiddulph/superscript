@@ -14,7 +14,7 @@
             <div class="col-12">
               <h5>Title</h5>
               <label for="Title">
-                <select class="form-select" aria-label="Default select example" v-model="post.title" name="title">
+                <select class="form-select" aria-label="Default select example" v-model="post.title" name="title" required>
                   <option selected>Select...</option>
                   <option value="Mr">Mr</option>
                   <option value="Ms">Ms</option>
@@ -26,9 +26,17 @@
           </div>
           <div class="row py-3">
             <div class="col-12 form-group">
-              <h5>Name</h5>
+              <h5>First Name</h5>
               <label for="Name" class="w-full">
-                <input class="form-control input-lg" type="text" placeholder="Jane Smith" v-model="post.first_name" name="first_name">
+                <input class="form-control input-lg" type="text" placeholder="Jane" v-model="post.first_name" name="first_name" required>
+              </label>
+            </div>
+          </div>
+          <div class="row py-3">
+            <div class="col-12 form-group">
+              <h5>Last Name</h5>
+              <label for="Name" class="w-full">
+                <input class="form-control input-lg" type="text" placeholder="Smith" v-model="post.last_name" name="last_name" required>
               </label>
             </div>
           </div>
@@ -36,7 +44,7 @@
             <div class="col-12">
               <h5>Premises Address</h5>
               <label for="address" class="w-full">
-                <textarea cols="20" rows="4" class="form-control input-lg" type="text" placeholder="Search or tell use what kind of business this is" v-model="post.address" name="address"></textarea>
+                <textarea cols="20" rows="4" class="form-control input-lg" type="text" placeholder="Search or tell use what kind of business this is" v-model="post.address" name="address" required></textarea>
               </label>
             </div>
           </div>
@@ -77,7 +85,7 @@
             <div class="col-12">
               <h5>Password</h5>
               <label for="password">
-                <input class="form-control" type="password" placeholder="password" v-model="post.password" name="title">
+                <input class="form-control" type="password" placeholder="password" v-model="post.password" name="password" required>
               </label>
             </div>
           </div>
@@ -85,7 +93,7 @@
             <div class="col-12">
               <h5>Confirm Password</h5>
               <label for="password_confirmation">
-                <input class="form-control" type="password" placeholder="Confirm Password" v-model="post.password_confirmation" name="password_confirmation">
+                <input class="form-control" type="password" placeholder="Confirm Password" v-model="post.password_confirmation" name="password_confirmation" required>
               </label>
             </div>
           </div>
@@ -111,7 +119,7 @@ export default defineComponent({
       post: {
         title: null,
         first_name: null,
-        last_name: 'biddulph',
+        last_name: null,
         address: null,
         policy_start_date: null,
         ern: null,
