@@ -101,7 +101,7 @@
               <h5>Password</h5>
               <label for="password">
                 <div :class="{ error: v$.post.password.$errors.length }">
-                  <input class="form-control" type="password" placeholder="password" v-model="post.password" name="password">
+                  <input class="form-control" type="password" v-model="post.password" name="password">
                   <div class="input-errors" v-for="error of v$.post.password.$errors" :key="error.$uid">
                     <small class="text-red-600 error-msg">Please enter password</small>
                   </div>
@@ -113,8 +113,8 @@
             <div class="col-12">
               <h5>Confirm Password</h5>
               <label for="password_confirmation">
-                <div :class="{ error: v$.post.password_confirmation.$errors.length }">
-                  <input class="form-control" type="password" placeholder="Confirm Password" v-model="post.password_confirmation" name="password_confirmation">
+                <div :class="{ error: v$.post.password_confirmation.$errors }">
+                  <input class="form-control" type="password" v-model="post.password_confirmation" name="password_confirmation">
                   <div class="input-errors" v-for="error of v$.post.password_confirmation.$errors" :key="error.$uid">
                     <small class="text-red-600 error-msg">The password does not match</small>
                   </div>
