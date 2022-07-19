@@ -171,17 +171,14 @@ export default defineComponent({
     submit() {
       console.log('V: ',this.v$)
       this.v$.$validate()
-      if (!this.v$.$error) {
-        this.axios.post('https://dr-frontend-test-api.herokuapp.com/api/accounts', this.post)
-        .then((result) => {
-          console.log('result: ', result);
-          if(result.status === 200) {
-            this.$router.push({ path : '/thankyou' });
-          }
-        })
-      } else {
-        alert('Form failed validation')
-      }
+      
+      this.axios.post('https://dr-frontend-test-api.herokuapp.com/api/accounts', this.post)
+      .then((result) => {
+        console.log('result: ', result);
+        if(result.status === 200) {
+          this.$router.push({ path : '/thankyou' });
+        }
+      })
     }
   },
   computed: {
