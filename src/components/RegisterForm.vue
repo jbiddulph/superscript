@@ -1,0 +1,166 @@
+<template>
+  <div class="bg-gray-100">
+    <div class="top-shadow bg-white">
+      &nbsp;
+    </div>
+    <form @submit.prevent="submit" class="text-left" role="form">
+      <div class="pb-20">
+        <div class="container text-left py-6 px-0 w-600">
+          <h2>Business details</h2>
+          <p class="mb-0 w-64">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, <a href="#">contact us</a>.</p>
+        </div>
+        <div class="form-inline rounded-xl bg-white container p-4 w-600">
+          <div class="row py-3">
+            <div class="col-12">
+              <h5>Title</h5>
+              <label for="Title">
+                <select class="form-select" aria-label="Default select example" v-model="post.title" name="title">
+                  <option selected>Select...</option>
+                  <option value="Mr">Mr</option>
+                  <option value="Ms">Ms</option>
+                  <option value="Miss">Miss</option>
+                  <option value="Mrs">Mrs</option>
+                </select>
+              </label>
+            </div>
+          </div>
+          <div class="row py-3">
+            <div class="col-12 form-group">
+              <h5>Name</h5>
+              <label for="Name" class="w-full">
+                <input class="form-control input-lg" type="text" placeholder="Jane Smith" v-model="post.first_name" name="first_name">
+              </label>
+            </div>
+          </div>
+          <div class="row py-3">
+            <div class="col-12">
+              <h5>Premises Address</h5>
+              <label for="address" class="w-full">
+                <textarea cols="20" rows="4" class="form-control input-lg" type="text" placeholder="Search or tell use what kind of business this is" v-model="post.address" name="address"></textarea>
+              </label>
+            </div>
+          </div>
+          <div class="row py-3">
+            <div class="col-12">
+              <h5>Policy Start Date</h5>
+              <label for="policy_start_date">
+                <input class="form-control" type="text" placeholder="MM/DD/YYYY" v-model="post.policy_start_date" name="policy_start_date">
+              </label>
+            </div>
+          </div>
+          <div class="row py-3">
+            <div class="col-12">
+              <hr />
+            </div>
+          </div>
+          <div class="row py-3">
+            <div class="col-12">
+              <h5>Employee ERN</h5>
+              <label for="ern">
+                <input class="form-control" type="text" v-model="post.ern" name="ern">
+              </label>
+            </div>
+          </div>
+          <div class="row py-3">
+            <div class="col-12">
+              <h5>We're exempt from having an ERN or we can provide it within 30 days</h5>
+                <input class="form-check-input" type="checkbox" value="" id="ern_exempt" placeholder="Employee ERN" v-model="post.ern_exempt" name="ern_exempt">
+                <label class="ml-4 form-check-label" for="ern_exempt">Employee ERN</label>
+            </div>
+          </div>
+          <div class="row py-3">
+            <div class="col-12">
+              <hr />
+            </div>
+          </div>
+          <div class="row py-3">
+            <div class="col-12">
+              <h5>Password</h5>
+              <label for="password">
+                <input class="form-control" type="password" placeholder="password" v-model="post.password" name="title">
+              </label>
+            </div>
+          </div>
+          <div class="row py-3">
+            <div class="col-12">
+              <h5>Confirm Password</h5>
+              <label for="password_confirmation">
+                <input class="form-control" type="password" placeholder="Confirm Password" v-model="post.password_confirmation" name="password_confirmation">
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <FormBottom />
+    </form>
+  </div>
+</template>
+
+<script lang="ts">
+import { defineComponent } from 'vue';
+import FormBottom from '@/components/FormBottom.vue';
+
+
+export default defineComponent({
+  name: 'RegisterForm',
+   components: {
+    FormBottom
+  },
+  data() {
+    return {
+      post: {
+        title: null,
+        first_name: null,
+        last_name: 'biddulph',
+        address: null,
+        policy_start_date: null,
+        ern: null,
+        ern_exempt: false,
+        password: null,
+        password_confirmation: null
+      }
+    }
+  },
+  methods: {
+    submit() {
+      console.warn(this.post)
+      this.axios.post('https://dr-frontend-test-api.herokuapp.com/api/accounts', this.post)
+      .then((result) => {
+        console.log('result: ', result);
+        if(result.status === 200) {
+           this.$router.push({ path : '/thankyou' });
+        }
+      })
+    }
+  },
+  computed: {
+    getLastName() {
+      return 'surname';
+    }
+  }
+});
+</script>
+
+<style scoped lang="scss">
+.top-shadow {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+}
+h2 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+}
+p {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+}
+a {
+  color: #0046FF
+}
+textarea {
+  resize: none;
+}
+.w-600 {
+  max-width:600px;
+}
+</style>

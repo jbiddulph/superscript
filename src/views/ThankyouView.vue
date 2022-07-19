@@ -1,19 +1,19 @@
 <template>
   <div class="home">
     <TopBar/>
-    <RegisterForm/>
+    <SuccessPage/>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import RegisterForm from '@/components/RegisterForm.vue';
+import SuccessPage from '@/components/SuccessPage.vue';
 import TopBar from '@/components/TopBar.vue';
 
 export default defineComponent({
   name: 'HomeView',
   components: {
-    RegisterForm,
+    SuccessPage,
     TopBar
   },
 });
