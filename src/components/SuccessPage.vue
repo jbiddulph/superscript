@@ -48,6 +48,24 @@
         </div>
       </div>
     </div>
+    <div class="w-600 container">
+      <h2 class="text-left">Expired</h2>
+    </div>
+    <div class="form-inline rounded-xl bg-red-100 border-2 border-red-300 text-red-500 container mt-12 mb-12 p-4 w-600">
+      <div>
+        <div class="flex justify-between align-items-center">
+          <h5 class="font-bold text-red-700">Employers liability</h5>
+        </div>
+        <div class="flex">
+          <p class="mr-12">Start date</p>
+          <p>20 Dec 2019</p>
+        </div>
+        <div class="flex">
+          <p class="mr-12">Start date</p>
+          <p>20 Dec 2019</p>
+        </div>
+      </div>
+    </div>
     <div class="h-8">
     </div>
   </div>
