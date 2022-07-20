@@ -15,9 +15,37 @@
         <img src="@/assets/cross.png" height="20" />
       </div>
     </div>
+    <div class="w-600 container">
+      <h2 class="text-left">Your Products</h2>
+      <h2 class="text-left">Active</h2>
+    </div>
     <div class="form-inline rounded-xl bg-white container mt-12 mb-12 p-4 w-600">
-      <div class="pb-20">
-        <h2>here we go</h2>
+      <div>
+        <div class="flex justify-between align-items-center">
+          <h5 class="font-bold">Professional indemnity</h5>
+          <span class="text-xl font-bold">£23.80</span>
+        </div>
+        <div class="flex">
+          <p class="mr-12">Start date</p>
+          <p>20 Dec 2020</p>
+        </div>
+        <div class="flex">
+          <p class="mr-12">Start date</p>
+          <p>20 Dec 2020</p>
+        </div>
+        <hr>
+        <div class="flex justify-between align-items-center">
+          <h5 class="font-bold">Cyber crime</h5>
+          <span class="text-xl font-bold">£8.80</span>
+        </div>
+        <div class="flex">
+          <p class="mr-12">Start date</p>
+          <p>20 Dec 2020</p>
+        </div>
+        <div class="flex">
+          <p class="mr-12">Start date</p>
+          <p>20 Dec 2020</p>
+        </div>
       </div>
     </div>
     <div class="h-8">

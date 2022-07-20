@@ -133,7 +133,7 @@
 import { defineComponent } from 'vue';
 import FormBottom from '@/components/FormBottom.vue';
 import useVuelidate from '@vuelidate/core';
-import {required, sameAs} from '@vuelidate/validators';
+import {required} from '@vuelidate/validators';
 
 export default defineComponent({
   name: 'RegisterForm',
@@ -163,27 +163,20 @@ export default defineComponent({
         last_name: {required},
         address: {required},
         password: {required},
-        password_confirmation: sameAs(this.post.password)
+        password_confirmation: {required}
       }
     }
   },
   methods: {
     submit() {
-      console.log('V: ',this.v$)
       this.v$.$validate()
       
       this.axios.post('https://dr-frontend-test-api.herokuapp.com/api/accounts', this.post)
       .then((result) => {
-        console.log('result: ', result);
         if(result.status === 200) {
           this.$router.push({ path : '/thankyou' });
         }
       })
-    }
-  },
-  computed: {
-    getLastName() {
-      return 'surname';
     }
   }
 });
